@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>code-gen</artifactId>
+        <groupId>cn.yunlai.cjds</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>to-code</artifactId>
+
+    <properties>
+        <!--  MyBatis Generator  -->
+        <!--  Java接口和实体类  -->
+        <targetJavaProject>${basedir}/src/main/code</targetJavaProject>
+        <targetMapperPackage>com.jwx.vaccine.support.core.mapper</targetMapperPackage>
+        <targetModelPackage>com.jwx.vaccine.support.core.domain</targetModelPackage>
+
+        <targetServicePackage>com.jwx.vaccine.support.core.service</targetServicePackage>
+        <targetDtoPackage>com.jwx.vaccine.support.model.pojo.dto</targetDtoPackage>
+
+        <!--  XML生成路径  -->
+        <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
+        <!--<targetResourcesProject>${basedir}/src/main/java/cn.yunlai.cjds.core/mapper</targetResourcesProject>-->
+        <targetXMLPackage>mapper</targetXMLPackage>
+
+        <!--  编译jdk版本  -->
+        <jdk.version>1.7</jdk.version>
+        <!--  依赖版本  -->
+        <mybatis.version>3.3.1</mybatis.version>
+        <mapper-ext.version>1.0</mapper-ext.version>
+        <pagehelper.version>4.1.1</pagehelper.version>
+        <mysql.version>5.1.29</mysql.version>
+        <spring.version>4.1.2.RELEASE</spring.version>
+        <mybatis.spring.version>1.2.4</mybatis.spring.version>
+
+
+    </properties>
+
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <configuration>
+                    <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+                    <overwrite>true</overwrite>
+                    <verbose>true</verbose>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>cn.yunlai.cjds</groupId>
+                        <artifactId>mapper-ext</artifactId>
+                        <version>${mapper-ext.version}</version>
+                    </dependency>
+
+
+                    <dependency>
+                        <groupId>cn.yunlai.cjds</groupId>
+                        <artifactId>codegen-ext</artifactId>
+                        <version>1.0-SNAPSHOT</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
