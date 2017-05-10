@@ -41,12 +41,12 @@
         <plugin type="${mapper.plugin}">
             <property name="mappers" value="${mapper.Mapper}"/>
         </plugin>
-        <plugin type="cn.yunlai.cjds.mybatis.generate.service.ServiceGenerateJaveFilesPlugin">
+        <plugin type="com.redding.tool.mybatis.generate.service.ServiceGenerateJaveFilesPlugin">
             <property name="targetPackage" value="${targetServicePackage}"></property>
             <property name="targetProject" value="${targetJavaProject}"></property>
         </plugin>
 
-        <plugin type="cn.yunlai.cjds.mybatis.generate.dto.DtoGenerateJaveFilesPlugin">
+        <plugin type="com.redding.tool.mybatis.generate.dto.DtoGenerateJaveFilesPlugin">
             <property name="targetPackage" value="${targetDtoPackage}"></property>
             <property name="targetProject" value="${targetJavaProject}"></property>
         </plugin>
@@ -65,9 +65,8 @@
         <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}"
                              type="XMLMAPPER"/>
 
-        <table tableName="COMPANY" domainObjectName="Company">
+        <table tableName="student" domainObjectName="Student">
             <property name="useActualColumnNames" value="false"/>
-            <generatedKey column="id" sqlStatement="SELECT COMPANY_SEQ.NEXTVAL FROM DUAL" identity="false"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>

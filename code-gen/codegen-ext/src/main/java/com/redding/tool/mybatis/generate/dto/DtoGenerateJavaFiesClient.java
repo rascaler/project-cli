@@ -1,4 +1,4 @@
-package cn.yunlai.cjds.mybatis.generate.dto;
+package com.redding.tool.mybatis.generate.dto;
 
 import org.mybatis.generator.api.FullyQualifiedTable;
 import org.mybatis.generator.api.IntrospectedColumn;

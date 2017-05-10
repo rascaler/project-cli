@@ -1,4 +1,4 @@
-package cn.yunlai.cjds.mybatis.generate.service;
+package com.redding.tool.mybatis.generate.service;
 
 import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.java.CompilationUnit;

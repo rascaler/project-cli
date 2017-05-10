@@ -16,15 +16,15 @@
         <!--  MyBatis Generator  -->
         <!--  Java接口和实体类  -->
         <targetJavaProject>${basedir}/src/main/code</targetJavaProject>
-        <targetMapperPackage>com.jwx.vaccine.support.core.mapper</targetMapperPackage>
-        <targetModelPackage>com.jwx.vaccine.support.core.domain</targetModelPackage>
+        <targetMapperPackage>com.redding.rbac.dao.mapper</targetMapperPackage>
+        <targetModelPackage>com.redding.rbac.dao.domain</targetModelPackage>
 
-        <targetServicePackage>com.jwx.vaccine.support.core.service</targetServicePackage>
-        <targetDtoPackage>com.jwx.vaccine.support.model.pojo.dto</targetDtoPackage>
+        <targetServicePackage>com.redding.rbac.service</targetServicePackage>
+        <targetDtoPackage>com.redding.rbac.service.dto</targetDtoPackage>
 
         <!--  XML生成路径  -->
         <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
-        <!--<targetResourcesProject>${basedir}/src/main/java/cn.yunlai.cjds.core/mapper</targetResourcesProject>-->
+        <!--<targetResourcesProject>${basedir}/src/main/java/com.redding.tool.core/mapper</targetResourcesProject>-->
         <targetXMLPackage>mapper</targetXMLPackage>
 
         <!--  编译jdk版本  -->
@@ -68,14 +68,14 @@
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <groupId>cn.yunlai.cjds</groupId>
+                        <groupId>com.redding.tool</groupId>
                         <artifactId>mapper-ext</artifactId>
                         <version>${mapper-ext.version}</version>
                     </dependency>
 
 
                     <dependency>
-                        <groupId>cn.yunlai.cjds</groupId>
+                        <groupId>com.redding.tool</groupId>
                         <artifactId>codegen-ext</artifactId>
                         <version>1.0-SNAPSHOT</version>
                     </dependency>

@@ -1,4 +1,4 @@
-package cn.yunlai.cjds.mybatis.generate.service;
+package com.redding.tool.mybatis.generate.dto;
 
 import org.mybatis.generator.api.GeneratedJavaFile;
 import org.mybatis.generator.api.IntrospectedTable;
@@ -15,7 +15,7 @@ import java.util.Properties;
 /**
  * Created by wurenqing on 2017/3/20.
  */
-public class ServiceGenerateJaveFilesPlugin extends PluginAdapter {
+public class DtoGenerateJaveFilesPlugin extends PluginAdapter {
 
 
     private String targetPackage;
@@ -26,7 +26,7 @@ public class ServiceGenerateJaveFilesPlugin extends PluginAdapter {
         return targetPackage;
     }
 
-    public ServiceGenerateJaveFilesPlugin setTargetPackage(String targetPackage) {
+    public DtoGenerateJaveFilesPlugin setTargetPackage(String targetPackage) {
         this.targetPackage = targetPackage;
         return this;
     }
@@ -35,7 +35,7 @@ public class ServiceGenerateJaveFilesPlugin extends PluginAdapter {
         return targetProject;
     }
 
-    public ServiceGenerateJaveFilesPlugin setTargetProject(String targetProject) {
+    public DtoGenerateJaveFilesPlugin setTargetProject(String targetProject) {
         this.targetProject = targetProject;
         return this;
     }
@@ -81,15 +81,10 @@ public class ServiceGenerateJaveFilesPlugin extends PluginAdapter {
             privateStringField.setAccessible(true);//允许访问私有字段
             List<IntrospectedTable> tables = (List<IntrospectedTable>) privateStringField.get(this.context);
             for (IntrospectedTable table : tables) {
-                ServiceGenerateJavaFiesClient test = new ServiceGenerateJavaFiesClient(this);
+                DtoGenerateJavaFiesClient test = new DtoGenerateJavaFiesClient(this);
                 test.setContext(this.getContext());
                 test.setIntrospectedTable(table);
                 clientGenerators.add(test);
-
-                ServiceImplGenerateJavaFiesClient testImpl = new ServiceImplGenerateJavaFiesClient(this);
-                testImpl.setContext(this.getContext());
-                testImpl.setIntrospectedTable(table);
-                clientGenerators.add(testImpl);
 
             }
 
