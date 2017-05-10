@@ -45,13 +45,13 @@ public class ServiceGenerateJavaFiesClient extends AbstractJavaGenerator {
 //            rootInterface = context.getJavaClientGeneratorConfiguration().getProperty(PropertyRegistry.ANY_ROOT_INTERFACE);
 //        }
 
-        String rootInterface = "com.jwx.vaccine.common.core.service.IService";
+        String rootInterface = "com.redding.rbac.service.utils.IService";
 
         if (stringHasValue(rootInterface)) {
             FullyQualifiedJavaType fqjt = new FullyQualifiedJavaType(rootInterface);
 
-            FullyQualifiedJavaType entityType = new FullyQualifiedJavaType(introspectedTable.getBaseRecordType() + "Do");
-            interfaze.addSuperInterface(new FullyQualifiedJavaType(rootInterface + "<" + entityType.getShortName() + "Do" + ">"));
+            FullyQualifiedJavaType entityType = new FullyQualifiedJavaType(introspectedTable.getBaseRecordType());
+            interfaze.addSuperInterface(new FullyQualifiedJavaType(rootInterface + "<" + entityType.getShortName() + ">"));
             interfaze.addImportedType(fqjt);
             interfaze.addImportedType(entityType);
         }

@@ -20,7 +20,7 @@
         <targetModelPackage>com.redding.rbac.dao.domain</targetModelPackage>
 
         <targetServicePackage>com.redding.rbac.service</targetServicePackage>
-        <targetDtoPackage>com.redding.rbac.service.dto</targetDtoPackage>
+        <targetDtoPackage>com.redding.rbac.commons.pojo.dto</targetDtoPackage>
 
         <!--  XML生成路径  -->
         <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>

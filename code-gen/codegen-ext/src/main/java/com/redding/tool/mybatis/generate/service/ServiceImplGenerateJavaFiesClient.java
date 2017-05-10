@@ -45,20 +45,20 @@ public class ServiceImplGenerateJavaFiesClient extends AbstractJavaGenerator {
 //            rootInterface = context.getJavaClientGeneratorConfiguration().getProperty(PropertyRegistry.ANY_ROOT_INTERFACE);
 //        }
 
-        String rootInterface = "com.jwx.vaccine.common.core.service.BaseService";
+        String rootInterface = "com.redding.rbac.service.utils.BaseService";
 
         if (stringHasValue(rootInterface)) {
             FullyQualifiedJavaType fqjt = new FullyQualifiedJavaType(rootInterface);
 
 
-            FullyQualifiedJavaType entityType = new FullyQualifiedJavaType(introspectedTable.getBaseRecordType() + "Do");
+            FullyQualifiedJavaType entityType = new FullyQualifiedJavaType(introspectedTable.getBaseRecordType());
 
 
-            topLevelClass.setSuperClass(new FullyQualifiedJavaType(rootInterface + "<" + entityType.getShortName() + "Do" +">"));
+            topLevelClass.setSuperClass(new FullyQualifiedJavaType(rootInterface + "<" + entityType.getShortName() +">"));
 
             topLevelClass.addImportedType(fqjt);
             topLevelClass.addImportedType(entityType);
-            FullyQualifiedJavaType superClass = new FullyQualifiedJavaType("com.jwx.vaccine.support.c.service." + entityType.getShortName() + "Service");
+            FullyQualifiedJavaType superClass = new FullyQualifiedJavaType("com.redding.rbac.service." + entityType.getShortName() + "Service");
             topLevelClass.addSuperInterface(superClass);
             topLevelClass.addImportedType(superClass);
         }
