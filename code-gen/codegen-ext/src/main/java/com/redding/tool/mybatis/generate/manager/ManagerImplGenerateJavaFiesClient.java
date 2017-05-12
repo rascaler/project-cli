@@ -45,7 +45,7 @@ public class ManagerImplGenerateJavaFiesClient extends AbstractJavaGenerator {
 //            rootInterface = context.getJavaClientGeneratorConfiguration().getProperty(PropertyRegistry.ANY_ROOT_INTERFACE);
 //        }
 
-        String rootInterface = "com.redding.rbac.infrastructure.manager.utils.DefaultManager";
+        String rootInterface = "com.redding.rbac.infrastructure.utils.DefaultManager";
 
         if (stringHasValue(rootInterface)) {
             FullyQualifiedJavaType fqjt = new FullyQualifiedJavaType(rootInterface);
@@ -58,9 +58,10 @@ public class ManagerImplGenerateJavaFiesClient extends AbstractJavaGenerator {
 
             topLevelClass.addImportedType(fqjt);
             topLevelClass.addImportedType(entityType);
-            FullyQualifiedJavaType superClass = new FullyQualifiedJavaType("com.redding.rbac.infrastructure." + entityType.getShortName() + "Manager");
+            FullyQualifiedJavaType superClass = new FullyQualifiedJavaType("com.redding.rbac.infrastructure.manager." + entityType.getShortName() + "Manager");
             topLevelClass.addSuperInterface(superClass);
             topLevelClass.addImportedType(superClass);
+            topLevelClass.addImportedType("org.springframework.stereotype.Service");
             topLevelClass.addAnnotation("@Service");
         }
 

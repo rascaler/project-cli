@@ -45,7 +45,7 @@ public class ManagerGenerateJavaFiesClient extends AbstractJavaGenerator {
 //            rootInterface = context.getJavaClientGeneratorConfiguration().getProperty(PropertyRegistry.ANY_ROOT_INTERFACE);
 //        }
 
-        String rootInterface = "com.redding.rbac.infrastructure.manager.utils.BaseManager";
+        String rootInterface = "com.redding.rbac.infrastructure.utils.BaseManager";
 
         if (stringHasValue(rootInterface)) {
             FullyQualifiedJavaType fqjt = new FullyQualifiedJavaType(rootInterface);
