@@ -16,10 +16,10 @@
         <!--  MyBatis Generator  -->
         <!--  Java接口和实体类  -->
         <targetJavaProject>${basedir}/src/main/code</targetJavaProject>
-        <targetMapperPackage>com.redding.rbac.dao.mapper</targetMapperPackage>
-        <targetModelPackage>com.redding.rbac.dao.domain</targetModelPackage>
+        <targetMapperPackage>com.redding.rbac.infrastructure.mapper</targetMapperPackage>
+        <targetModelPackage>com.redding.rbac.infrastructure.domain</targetModelPackage>
 
-        <targetServicePackage>com.redding.rbac.service</targetServicePackage>
+        <targetServicePackage>com.redding.rbac.infrastructure.manager</targetServicePackage>
         <targetDtoPackage>com.redding.rbac.commons.pojo.dto</targetDtoPackage>
 
         <!--  XML生成路径  -->

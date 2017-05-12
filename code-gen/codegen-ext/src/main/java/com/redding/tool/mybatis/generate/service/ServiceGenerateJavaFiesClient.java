@@ -33,7 +33,7 @@ public class ServiceGenerateJavaFiesClient extends AbstractJavaGenerator {
         buffer.append(plugin.getProperties().getProperty("targetPackage"));
         buffer.append(".");
         buffer.append(domain);
-        buffer.append("Service");
+        buffer.append("Manager");
         System.out.println(buffer + "=========");
 
         FullyQualifiedJavaType type      = new FullyQualifiedJavaType(buffer.toString());
@@ -45,7 +45,7 @@ public class ServiceGenerateJavaFiesClient extends AbstractJavaGenerator {
 //            rootInterface = context.getJavaClientGeneratorConfiguration().getProperty(PropertyRegistry.ANY_ROOT_INTERFACE);
 //        }
 
-        String rootInterface = "com.redding.rbac.service.utils.IService";
+        String rootInterface = "com.redding.rbac.infrastructure.manager.utils.BaseManager";
 
         if (stringHasValue(rootInterface)) {
             FullyQualifiedJavaType fqjt = new FullyQualifiedJavaType(rootInterface);
