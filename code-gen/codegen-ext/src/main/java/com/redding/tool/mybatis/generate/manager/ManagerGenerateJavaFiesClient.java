@@ -1,4 +1,4 @@
-package com.redding.tool.mybatis.generate.service;
+package com.redding.tool.mybatis.generate.manager;
 
 import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.java.CompilationUnit;
@@ -15,10 +15,10 @@ import static org.mybatis.generator.internal.util.StringUtility.stringHasValue;
 /**
  * Created by wurenqing on 2017/3/20.
  */
-public class ServiceGenerateJavaFiesClient extends AbstractJavaGenerator {
+public class ManagerGenerateJavaFiesClient extends AbstractJavaGenerator {
     private PluginAdapter plugin;
 
-    public ServiceGenerateJavaFiesClient(PluginAdapter plugin) {
+    public ManagerGenerateJavaFiesClient(PluginAdapter plugin) {
         this.plugin = plugin;
     }
 
@@ -33,12 +33,28 @@ public class ServiceGenerateJavaFiesClient extends AbstractJavaGenerator {
         buffer.append(plugin.getProperties().getProperty("targetPackage"));
         buffer.append(".");
         buffer.append(domain);
-        buffer.append("Service");
+        buffer.append("Manager");
         System.out.println(buffer + "=========");
 
         FullyQualifiedJavaType type      = new FullyQualifiedJavaType(buffer.toString());
         Interface              interfaze = new Interface(type);
         interfaze.setVisibility(JavaVisibility.PUBLIC);
+
+//        String rootInterface = introspectedTable.getTableConfigurationProperty(PropertyRegistry.ANY_ROOT_INTERFACE);
+//        if (!stringHasValue(rootInterface)) {
+//            rootInterface = context.getJavaClientGeneratorConfiguration().getProperty(PropertyRegistry.ANY_ROOT_INTERFACE);
+//        }
+
+        String rootInterface = "com.redding.rbac.infrastructure.manager.utils.BaseManager";
+
+        if (stringHasValue(rootInterface)) {
+            FullyQualifiedJavaType fqjt = new FullyQualifiedJavaType(rootInterface);
+
+            FullyQualifiedJavaType entityType = new FullyQualifiedJavaType(introspectedTable.getBaseRecordType());
+            interfaze.addSuperInterface(new FullyQualifiedJavaType(rootInterface + "<" + entityType.getShortName() + ">"));
+            interfaze.addImportedType(fqjt);
+            interfaze.addImportedType(entityType);
+        }
 
         List<CompilationUnit> answer = new ArrayList<CompilationUnit>();
 

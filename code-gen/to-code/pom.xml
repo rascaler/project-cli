@@ -19,9 +19,9 @@
         <targetMapperPackage>com.redding.rbac.infrastructure.mapper</targetMapperPackage>
         <targetModelPackage>com.redding.rbac.infrastructure.domain</targetModelPackage>
 
-        <targetServicePackage>com.redding.rbac.infrastructure.manager</targetServicePackage>
+        <targetServicePackage>com.redding.rbac.service</targetServicePackage>
         <targetDtoPackage>com.redding.rbac.commons.pojo.dto</targetDtoPackage>
-
+        <targetManagerPackage>com.redding.rbac.infrastructure.manager</targetManagerPackage>
         <!--  XML生成路径  -->
         <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
         <!--<targetResourcesProject>${basedir}/src/main/java/com.redding.tool.core/mapper</targetResourcesProject>-->

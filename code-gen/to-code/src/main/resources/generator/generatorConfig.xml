@@ -51,6 +51,11 @@
             <property name="targetProject" value="${targetJavaProject}"></property>
         </plugin>
 
+        <plugin type="com.redding.tool.mybatis.generate.manager.ManagerGenerateJaveFilesPlugin">
+            <property name="targetPackage" value="${targetManagerPackage}"></property>
+            <property name="targetProject" value="${targetJavaProject}"></property>
+        </plugin>
+
 
         <jdbcConnection driverClass="${jdbc.driverClass}"
                         connectionURL="${jdbc.url}"
