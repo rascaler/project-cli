@@ -62,6 +62,9 @@
                         userId="${jdbc.user}"
                         password="${jdbc.password}">
         </jdbcConnection>
+        <javaTypeResolver type="com.redding.tool.mybatis.generate.resolver.MyJavaTypeResolver">
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
 
         <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}"/>
 
@@ -71,123 +74,122 @@
                              type="XMLMAPPER"/>
 
 
-
         <table tableName="tb_element_privilege" domainObjectName="ElementPrivilege">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_element" domainObjectName="Element">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_enterprise" domainObjectName="Enterprise">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_file" domainObjectName="File">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_file_privilege" domainObjectName="FilePrivilege">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_login_log" domainObjectName="LoginLog">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_menu" domainObjectName="Menu">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_menu_privilege" domainObjectName="MenuPrivilege">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_operation" domainObjectName="Operation">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_operation_privilege" domainObjectName="OperationPrivilege">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
-        <table tableName="tb_organization" domainObjectName="Oragnization">
-            <property name="useActualColumnNames" value="false"/>
+        <table tableName="tb_organization" domainObjectName="Organization">
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_organization_user" domainObjectName="OrganizationUser">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_privilege" domainObjectName="Privilege">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_role" domainObjectName="Role">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_role_privilege" domainObjectName="RolePrivilege">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_role_user_group" domainObjectName="RoleUserGroup">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_user" domainObjectName="User">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_user_group" domainObjectName="UserGroup">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_user_role" domainObjectName="UserRole">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
         <table tableName="tb_user_user_group" domainObjectName="UserUserGroup">
-            <property name="useActualColumnNames" value="false"/>
+            <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
