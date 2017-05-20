@@ -164,7 +164,13 @@
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
-        <table tableName="tb_role_user_group" domainObjectName="RoleUserGroup">
+        <table tableName="tb_organization_role" domainObjectName="OrganizationRole">
+            <property name="useActualColumnNames" value="true"/>
+            <columnOverride column="%">
+                <property name="delimitedColumnName" value="true"/>
+            </columnOverride>
+        </table>
+        <table tableName="tb_organization_user" domainObjectName="OrganizationUser">
             <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
@@ -176,19 +182,7 @@
                 <property name="delimitedColumnName" value="true"/>
             </columnOverride>
         </table>
-        <table tableName="tb_user_group" domainObjectName="UserGroup">
-            <property name="useActualColumnNames" value="true"/>
-            <columnOverride column="%">
-                <property name="delimitedColumnName" value="true"/>
-            </columnOverride>
-        </table>
         <table tableName="tb_user_role" domainObjectName="UserRole">
-            <property name="useActualColumnNames" value="true"/>
-            <columnOverride column="%">
-                <property name="delimitedColumnName" value="true"/>
-            </columnOverride>
-        </table>
-        <table tableName="tb_user_user_group" domainObjectName="UserUserGroup">
             <property name="useActualColumnNames" value="true"/>
             <columnOverride column="%">
                 <property name="delimitedColumnName" value="true"/>
